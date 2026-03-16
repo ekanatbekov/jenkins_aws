@@ -1,6 +1,13 @@
-terraform {
-  required_version = ">= 1.1.1"
-}
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
+
+  default_tags {
+    tags = {
+      Project     = var.project_name
+      Environment = var.environment
+      ManagedBy   = "Terraform"
+      Owner       = var.owner
+      Purpose     = "OnDemandJenkins"
+    }
+  }
 }
