@@ -1,4 +1,4 @@
-#  On-Demand Jenkins Infrastructure with Terraform (AWS)
+# On-Demand Jenkins Infrastructure with Terraform (AWS)
 
 ##  Overview
 
@@ -13,7 +13,7 @@ Instead of running Jenkins 24/7, this setup allows you to:
 
 ---
 
-## Architecture
+##  Architecture
 
 **Components:**
 - Terraform (Infrastructure as Code)
@@ -25,7 +25,7 @@ Instead of running Jenkins 24/7, this setup allows you to:
 
 ---
 
-## Features
+##  Features
 
 - Fully automated EC2 provisioning using Terraform  
 - Jenkins installation via `user_data` (cloud-init)  
@@ -35,7 +35,8 @@ Instead of running Jenkins 24/7, this setup allows you to:
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
+
 
 .
 ├── main.tf
@@ -47,6 +48,8 @@ Instead of running Jenkins 24/7, this setup allows you to:
 ├── generator.sh
 ├── jenkins.sh
 └── README.md
+
+
 ---
 
 ##  Prerequisites
@@ -57,10 +60,9 @@ Create an IAM user with programmatic access.
 ### 2. Required Policy (for demo)
 
 Attach:
-
 - `AdministratorAccess` (for simplicity)
 
->  For production use, follow the **least-privilege principle**.
+>  For production use, follow the **least-privilege principle**
 
 ---
 
@@ -69,19 +71,13 @@ Attach:
 - Terraform  
 - AWS CLI  
 
-Verify:
-
-```bash
-terraform -v
-aws --version
-```
-
 ## How to Use
 1. Create your tfvars file
 cp terraform.tfvars.example terraform.tfvars
 
-Update at least this value:
-allowed_cidr_blocks = ["YOUR_PUBLIC_IP/32"] in terraform.tfvars.example
+Update:
+
+allowed_cidr_blocks = ["YOUR_PUBLIC_IP/32"]
 2. Run the helper script
 chmod +x generator.sh
 ./generator.sh
@@ -92,7 +88,7 @@ Choose:
 
 2 → Destroy Jenkins
 
-## Access Jenkins
+ Access Jenkins
 
 After deployment, Terraform outputs:
 
@@ -105,16 +101,11 @@ SSM connection command
 Open Jenkins:
 
 http://<public-dns>:8080
-
-
-Get Initial Admin Password
-
+ Get Initial Admin Password
 aws ssm start-session --target <instance-id> --region us-east-1
-
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
-
-### Notes
+## Notes
 
 This project uses the default VPC to keep things simple for a demo/lab setup.
 
