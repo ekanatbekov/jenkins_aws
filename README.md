@@ -1,6 +1,6 @@
-# 🚀 On-Demand Jenkins Infrastructure with Terraform (AWS)
+#  On-Demand Jenkins Infrastructure with Terraform (AWS)
 
-## 📌 Overview
+##  Overview
 
 This project demonstrates how to provision **Jenkins on-demand using Terraform** in AWS to optimize cost and automate CI/CD infrastructure.
 
@@ -37,6 +37,7 @@ Instead of running Jenkins 24/7, this setup allows you to:
 
 ## 📂 Project Structure
 
+.
 ├── main.tf
 ├── provider.tf
 ├── variables.tf
@@ -46,7 +47,6 @@ Instead of running Jenkins 24/7, this setup allows you to:
 ├── generator.sh
 ├── jenkins.sh
 └── README.md
-
 ---
 
 ##  Prerequisites
@@ -92,7 +92,7 @@ Choose:
 
 2 → Destroy Jenkins
 
-🌐 Access Jenkins
+## Access Jenkins
 
 After deployment, Terraform outputs:
 
