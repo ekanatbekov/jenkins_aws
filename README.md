@@ -35,23 +35,6 @@ Instead of running Jenkins 24/7, this setup allows you to:
 
 ---
 
-##  Project Structure
-
-
-.
-├── main.tf
-├── provider.tf
-├── variables.tf
-├── outputs.tf
-├── templates/
-│ └── user_data.sh.tftpl
-├── generator.sh
-├── jenkins.sh
-└── README.md
-
-
----
-
 ##  Prerequisites
 
 ### 1. AWS Account
